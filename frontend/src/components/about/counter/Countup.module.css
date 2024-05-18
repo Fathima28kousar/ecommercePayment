@@ -1,0 +1,115 @@
+.counter{
+    width:100%;
+    max-width: 100%;
+    background-color: #001524;
+    margin-bottom: 150px;
+    color:white;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    
+    h3{
+        font-size: 20px;
+        width: 200px;
+    }
+    
+    .numberContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        .numbers{
+            h2{
+                font-size: 46px;
+                font-weight: 500;
+                font-family: 'Open Sans',sans-serif;
+            }
+            p{
+                font-size: 20px;
+            }
+        }
+    }
+
+}
+
+@media(max-width: 1024px){
+    .counter{
+        padding: 50px 30px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;
+        
+        h3{
+            width: 100%;
+            text-align: center;
+
+        }
+
+        .numberContainer{
+            gap: 100px;
+            .numbers{
+                h2{
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 921px){
+    .counter{
+        padding: 40px 30px;
+        gap: 50px;
+        
+        .numberContainer{
+            gap: 100px;
+            .numbers{
+                h2{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .counter{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+
+        h3{
+            width: 100%;
+            text-align: center;
+        }
+
+        .numberContainer{
+            display: block;
+            .numbers{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+                h2{
+                    font-size: 30px;
+                }
+            }
+        }
+
+        
+    }
+}
+
+@media (max-width:480px){
+    .counter{
+        padding: 40px 20px;
+        h3{
+            font-size: 15.5px;
+        }
+    }
+}

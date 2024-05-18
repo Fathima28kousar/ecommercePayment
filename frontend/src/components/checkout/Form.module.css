@@ -1,0 +1,130 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8F6F3;
+  padding:  10px 40px;
+  margin: 0 auto;
+  flex-direction: column;
+  
+  .billingDetails {
+    padding: 10px 0;  
+    width: 100%;
+    h2 {
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  form {
+    width: 70%;
+    padding-top: 20px;
+    div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      @media (max-width: 767px) {
+        .checkout {
+          .form {
+            padding: 50px 15px;
+          }
+        }
+      }
+      font-size: 14.5px;
+      font-weight: 600;
+    }
+
+    input {
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      outline: none;
+      opacity: 0.95;
+      border: 1px solid #ddd;
+    }
+
+    input:focus {
+      border: 1px dotted black;
+      opacity: 1;
+    }
+
+    select {
+      padding: 12px;
+      font-size: 16px;
+      width: 100%;
+      outline: none;
+      border: 1px solid #ddd;
+    }
+
+    .name {
+      display: flex;
+      width: 100%;
+      gap: 50px;
+
+      .firstName,
+      .lastName {
+        flex: 1;
+      }
+
+      input {
+        width: 100%;
+      }
+    }
+    em{
+      color: rgb(214, 5, 5);
+    }
+  }
+}
+
+@media (max-width: 921px){
+  .container{
+    width: 100%;
+    form {
+      width: 85%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    form {
+      width: 100%;
+      .name {
+        gap: 40px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding:  20px;
+    form {
+      
+      label {
+        font-size: 13px;
+      }
+
+      .name {
+        gap: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    form {
+      label {
+        font-size: 12.9px;
+      }
+
+      .name {
+        gap: 5px;
+      }
+    }
+  }
+}

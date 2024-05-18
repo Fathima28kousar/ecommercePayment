@@ -1,0 +1,180 @@
+.container{
+    width: 100%;
+    max-width: 100%;
+    .address{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    
+        .header{
+            font-size: 24px;
+            background-color: #f8f6f3;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            position: relative;
+        }
+    
+        .info{
+            
+            display:flex;
+            gap: 20px;
+            padding: 100px 30px 70px 30px;
+            border-radius: 10px;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(0, 0, 0, 0.2);
+            top: 300px; 
+            
+            section{
+                border: 1px solid #ccc;
+                display:flex;
+                align-items: center;
+                flex-direction: column;
+                border-radius: 5px;
+                width: 300px;
+                height: 150px;
+                justify-content: center;
+                gap: 2px;
+                flex-wrap: wrap;
+                
+                .icon{
+                    font-size: 36px;
+                    color: #8bc34a;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .faq{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 50px;
+        padding-top: 350px;
+
+        img {
+            width: 100px;
+        }
+        h1{
+            text-align: center;
+
+        }
+    }
+}
+
+@media(min-width: 921px) and (max-width: 1024px){
+    .container{
+        .address{
+            .info{
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px) and (max-width: 921px){
+    .container{
+        .address{
+            .header{
+                h1{
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+            .info{
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px){
+    .container{
+        .address{
+            .header{
+                flex-direction: column;
+                height: 200px;
+                h1{
+                    font-size: 30px;
+                }
+            }
+            .info{
+                position: static;
+                flex-direction: column;
+                width: 90%;
+                margin-top: 50px;
+                padding: 50px 20px;
+                border-radius: 5px;
+                gap: 15px;
+
+                section{
+                    width: 100%;
+                }
+            }
+        }
+
+        .faq{
+            padding-top: 100px;
+            gap: 30px;
+            h1{
+                font-size: 25px;
+            }
+        }
+    }
+}
+
+@media(max-width: 380px){
+    .container{
+        .address{
+            .header{
+                h1{
+                    text-align: center;
+                    font-size: 25px;
+                }
+            }
+            .info{
+                section{
+                    flex-wrap: wrap;
+                    text-align: center;
+                    
+                    .icon{
+                        font-size: 25px;
+                        flex-wrap: wrap;
+                        p{
+                            flex-wrap: wrap;
+                            font-size: 14.5px;
+                            white-space: nowrap; 
+                        }
+                    }
+                }
+            }
+        }
+        .faq{
+            h1{
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media(max-width:200px){
+    .container{
+        overflow: hidden;
+        .address{
+            .info{
+                section{
+                    text-wrap: wrap;
+                    overflow: hidden; 
+                   
+                }
+            }
+        }
+    }
+}

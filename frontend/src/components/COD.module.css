@@ -1,0 +1,122 @@
+.noItems{
+  background-color: #f8f6f3;
+  height: 100vh;
+  
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  h1{
+    width: 100%;
+    text-align: center;
+  }
+ 
+}
+.container{
+    background-color: #f8f6f3;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 20px 100px;
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+    p,h4{
+        color: #333333;
+    }
+    
+    
+    .COD{
+        .placed{
+            padding-bottom: 30px;
+        }
+        .userInfo{
+            display: flex;
+            gap: 20px;
+            padding-bottom: 20px;
+            h4{
+                font-family: 'Open Sans', sans-serif;
+            }
+        }
+    }
+
+    .order {
+        height: 100%;
+        border: 1px solid #ddd;
+        display: flex;
+        align-items: space-between;
+        flex-direction: column;
+        align-self: flex-start;
+        font-size: 17px;
+        flex: 1;
+  
+        .h3{
+          padding: 10px;
+          background-color: #ffff;
+        }
+  
+        table {
+          color: #3b3b3b;
+          width: 100%;
+          border-collapse: collapse; /* This ensures that table borders collapse into a single border */
+          border: 1px solid #ddd;
+  
+          .product {
+            text-align: left;
+            white-space: nowrap;
+          }
+  
+          .subtotal {
+            text-align: right;
+          }
+  
+          td,th {
+            padding: 10px;
+          }
+  
+          .subTr {
+            text-align: right;
+            white-space: nowrap;
+          }
+        }}
+}
+
+@media(max-width:921px){
+    .container{
+        .order {
+            width: 100%;
+    
+            table {
+              .product {
+                text-align: left;
+              }
+              
+            }
+          }
+    }
+}
+
+@media(max-width:767px){
+    .container{
+        .order {
+            font-size: 15px;
+          }
+    }
+}
+
+
+@media(max-width:270px){
+    .container{
+        overflow: hidden;
+        .order{
+            table{
+                td,th{
+                    padding:0;
+                }
+            }
+        }
+        .COD{
+            .userInfo{
+                flex-direction: column;
+            }
+        }
+    }
+}

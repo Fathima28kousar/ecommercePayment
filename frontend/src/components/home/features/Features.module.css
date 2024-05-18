@@ -1,0 +1,156 @@
+.container {
+  width: 100%;
+  max-width: 100%;
+  .features {
+    background-color: black;
+    color: #ffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    height: auto;
+
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333333;
+      border: 10px solid black;
+      flex: 1;
+      gap: 10px;
+      width: 260px;
+      height: 160px;
+      border-radius: 20px;
+
+      .icon {
+        color: #8bc34a;
+        font-size: 30px;
+        margin-bottom: 25px;
+      }
+    }
+  }
+  .sellingProducts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 0;
+    width: 100%;
+
+    h2 {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (min-width: 922px) and (max-width: 1024px) {
+  .container {
+    .features {
+      padding: 10px;
+      height: auto;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 0;
+
+      section {
+        width: 50%;
+        flex: auto;
+        border: 10px solid black;
+        border-radius: 15px;
+        gap: 20px;
+        height: 140px;
+
+        h2 {
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+
+        .icon {
+          margin-bottom: 10px;
+          font-size: 37px;
+        }
+      }
+    }
+
+    .sellingProducts {
+      gap: 10px;
+      padding: 0;
+      padding-top: 70px;
+      h2 {
+        font-size: 32px;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 921px) {
+  .container {
+    .features {
+      padding: 20px ;
+      height: auto;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 0;
+
+      section {
+        width: 50%;
+        flex: auto;
+        border: 10px solid black;
+        border-radius: 15px;
+        gap: 20px;
+
+        h2 {
+          font-size: 20px;
+          margin-bottom: 5px;
+        }
+
+        .icon {
+          margin-bottom: 10px;
+          font-size: 37px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    .features {
+      display: block;
+      padding: 15px 10px;
+
+
+      section {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 10px;
+        display: block;
+        height: 100%;
+        font-size: 15px;
+
+        .icon {
+          margin-bottom: 5px;
+          font-size: 35px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width:480px){
+  .container{
+    .sellingProducts{
+      h2{
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media(max-width: 200px){
+  .container{
+    overflow: hidden;
+  }
+}

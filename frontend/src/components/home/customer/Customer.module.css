@@ -1,0 +1,231 @@
+.container {
+    background-color: #F8F6F3;
+    background-image: linear-gradient(#ffff, #F8F6F3);
+    max-width: 100%;
+    width: 100%;
+    
+    .customer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+        padding: 50px;
+
+
+        .sections{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            height: 70vh;
+            padding: 70px 30px;
+
+            section{
+                border:none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 50vmin;
+                flex: 1;
+                gap: 20px;
+                padding: 20px;
+                border-radius: 5px;
+                background-color: #ffff;
+                box-shadow: 2px 2px 3px 5px #dad9d9;
+
+                .stars{
+                    color: orange;
+                    display: flex;
+                    gap: 4px;
+                    font-size: 18px;
+                }
+                p{
+                    text-align: center;
+                    line-height: 22px;
+                }
+
+                .testimage{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 20px;
+                }
+
+            }
+
+            .deal{
+                flex:1.1;
+                height: 70vmin;
+                text-align: center;
+                color: #ffff;
+                background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.6)),url('./deal.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                
+
+                h1{
+                    padding: 0 40px;
+                    font-weight: 900;
+                    font-size: 30px;
+                }
+                Button{
+                    margin-top: 50px;
+                }
+            }
+
+            .deal:hover{
+                opacity: 1; 
+                background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('./deal.jpg');
+                
+            }
+        }
+    }
+
+    .brands{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding: 50px 0;
+        flex-wrap: wrap;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            /* margin: 5px; */
+            min-height: 100px;
+            width: 160px;
+        }
+
+        h3{
+            font-size: 20px;
+        }
+    }
+}
+
+@media(min-width:1200px){
+    .container{
+        .brands{
+            img{
+                width: 200px;
+                
+            }
+        }
+    }
+}
+
+@media (min-width: 922px) and (max-width: 1024px) {
+
+    .container{
+        .customer{
+            padding: 15px;
+            .sections{
+                gap: 20px;
+                padding: 40px 15px;
+                section{
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 921px) {
+    .container{
+        .customer{
+            padding: 40px 20px;
+
+            h1{
+                font-size: 25px;
+                text-align: center;
+            }
+            .sections{
+                gap:20px;
+                padding: 20px 10px;
+                section{
+                    padding: 10px;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+}
+
+
+@media (max-width: 767px){
+    .container{
+        .customer{
+            height: 100%;
+            padding: 50px 10px;
+
+            h1{
+                font-size: 25px;
+                text-align: center;
+            }
+            .sections{
+                display: block;
+                height: 70%;
+                padding:10px;
+                section{
+                    width: 100%;
+                    margin-bottom: 25px;
+                    height:auto;
+                    font-size: 15px;
+                    padding: 10px 0;
+                }
+                .deal{
+                    flex:2;
+                    height: 250px;
+
+                    h1{
+                        font-size: 25px;
+                        padding:0;
+                    }
+                    Button{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .brands{
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+
+       h3{
+        width: 100%;
+        text-align: center;
+       }
+
+    }
+}
+
+@media(max-width: 200px){
+    .container{
+        overflow: hidden;
+        .customer{
+            h1{
+                font-size: 20px;
+            }
+            .sections{
+                section{
+                    
+                    width: 100px;
+                }
+                .deal{
+                    h1{
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+
+    }
+}

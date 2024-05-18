@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Status</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                {% if status %}
+                    <h2>Thanks, your payment has been received</h2>
+                {% else %}
+                    <h2>Your payment has failed, please try again</h2>
+                {% endif %}
+                <a href="/" class="btn btn-success">Buy again</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
