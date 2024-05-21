@@ -50,7 +50,7 @@ const Form = ({ setCart }) => {
     
             await axios({
                 method: 'post',
-                url: 'http://127.0.0.1:8000/api/',
+                url: 'https://organicstoreback.vercel.app/api/',
                 data: formField
 
             }).then((response) => {
@@ -114,7 +114,7 @@ const Form = ({ setCart }) => {
         <div className={styles.billingDetails}>
             <h2>Billing details</h2>
         </div>
-      <form action="http://127.0.0.1:8000/api/" method="post" onSubmit={handleSubmit}>
+      <form action="https://organicstoreback.vercel.app/api/" method="post" onSubmit={handleSubmit}>
             <div className={styles.name}>
                 <div className={styles.firstName}>
                     <label>First Name</label> <br/>
