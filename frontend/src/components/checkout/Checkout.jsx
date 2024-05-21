@@ -6,9 +6,6 @@ import { useHistory } from "react-router-dom";
 const Checkout = (props) => {
   const { cartItems = {} } = props.location.state || {};
   const { totalPrice = {} } = props.location.state || {};
-  // console.log(props.location.state);
-  // console.log(cartItems)
-  // console.log(totalPrice)
 
   const history = useHistory();
 
@@ -44,10 +41,6 @@ const handleSubmit = async (event) => {
         pathname:"/billingDetails",
         state: {cartItems: cartItems, totalPrice: totalPrice, paymentMethod: selectedPaymentMethod}
         }); // Redirect to a page for COD success
-  // } else {
-  //     // Further processing, such as sending data to backend for online payment
-  //     history.push('/success', { totalPrice}); // Redirect to a generic success page
-
   }
 };
 

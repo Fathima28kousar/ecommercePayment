@@ -18,8 +18,6 @@ const Form = ({ setCart }) => {
     const history = useHistory();
     const location = useLocation();
     const { cartItems, totalPrice, paymentMethod  } = location.state || {};
-    // console.log(cartItems,totalPrice, paymentMethod )
-
 
     const handleSubmit = async(e) => {
         e.preventDefault();
@@ -45,7 +43,7 @@ const Form = ({ setCart }) => {
             formField.append('lastName',lastName)
             formField.append('emails',emails)
             formField.append('pincode',pincode)
-            formField.append('address',setAddress)
+            formField.append('address',address)
             formField.append('phone',phone)
             formField.append('apartment',apartment)
             formField.append('city',city)
@@ -56,7 +54,6 @@ const Form = ({ setCart }) => {
                 data: formField
 
             }).then((response) => {
-                // console.log(response.data);
                 if (paymentMethod === 'Online Payment'){
                     history.push( {
                         pathname:'/success',
@@ -100,14 +97,13 @@ const Form = ({ setCart }) => {
         catch (error) {
             if (error.response) {
                 // The request was made and the server responded with a status code
-                // console.error("Server responded with a status code:", error.response.status);
-                // console.error("Response data:", error.response.data);
+                console.error("Response data:", error.response.data);
             } else if (error.request) {
                 // The request was made but no response was received
-                // console.error("No response received from server.");
+                console.error("No response received from server.");
             } else {
                 // Something else happened while setting up the request
-                // console.error("Error:", error.message);
+                console.error("Error:", error.message);
             }
         }
     }
