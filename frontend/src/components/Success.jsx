@@ -1,16 +1,17 @@
 import React from 'react'
 import {useEffect,useState} from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation,useHistory } from 'react-router-dom';
 import axios from 'axios'
 import styles from './Success.module.css'
+import Button from "./home/button/Button";
 
 const Success = ({setCart}) => {
+    const history = useHistory();
     const location = useLocation();
     // console.log(location.state);
     const [formData, setFormData] = useState(null);
-    const formdata = location.state
     // console.log(formdata)
-    const { firstName, lastName, emails, pincode, address, apartment, phone } = location.state || {};
+    const { pincode, address, apartment, city } = location.state || {};
     const { cartItems, totalPrice } = location.state || {};
     // console.log(cartItems,totalPrice)
     // console.log(firstName, lastName, emails, pincode, address, apartment, phone)
@@ -23,6 +24,11 @@ const Success = ({setCart}) => {
     handleSuccess();
     fetchData();
   }, []);
+
+  const onClick = () => {
+    history.push('/');
+    window.scrollTo(0, 0);
+  }
 
 
   const fetchData = async () => {
@@ -83,7 +89,7 @@ const Success = ({setCart}) => {
             <div>
               
               <h4>Address:</h4>
-              <p>{apartment},{address},{pincode}</p>
+              <p>{apartment},{address},{city},{pincode}</p>
               
               <h5>Your Order will be delivered within 2 days</h5>
             </div>
@@ -119,6 +125,10 @@ const Success = ({setCart}) => {
           ) : (
             <p>Your cart is empty.</p>
           )}
+        </div>
+
+        <div className={styles.buttons}>
+        <Button text="Back to home" onClick={onClick}/>
         </div>
       </div>
     </div>

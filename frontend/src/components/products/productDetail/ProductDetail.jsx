@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./ProductDetail.module.css";
 import { useParams } from "react-router-dom";
 import items from "../data";
@@ -6,46 +6,61 @@ import Button from "../../home/button/Button";
 import ReactImageMagnify from "react-image-magnify";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const ProductDetail = ({ cart, setCart, count, setCount }) => {
+
+const ProductDetail = ({ cart = [], setCart, count, setCount }) => {
   const { id } = useParams();
   const [quantity, setQuantity] = useState(1);
-  const [productTotalInCart, setProductTotalInCart] = useState(0);
 
   const handleQuantityChange = (event) => {
-    const newQuantity = parseInt(event.target.value);
-    setQuantity(newQuantity >= 1 ? newQuantity : 1);
+    const value = event.target.value;
+    const newQuantity = parseInt(value);
+
+    if (value === '' || (newQuantity >= 1 && newQuantity <= 1000)) {
+      setQuantity(value === '' ? '' : newQuantity);
+    }
   };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const selectedItem = items.find((item) => item.id === parseInt(id)); //finding item based on id
+  const selectedItem = items.find((item) => item.id === parseInt(id));
   if (!selectedItem) {
-    return <div className={styles.container}>Product not found</div>; //if item not found
+    return <div className={styles.container}>Product not found</div>;
   }
 
   const addToCart = () => {
+    if (!quantity || quantity <= 0) {
+      toast.error("Invalid quantity. Please enter a valid quantity.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
     const { id, price, name, description, image1 } = selectedItem;
     const obj = { id, price, name, description, image1, quantity };
 
-    const existingIndex = cart.findIndex(item => item.id === id);  // Check if the item already exists in the cart
-    if (existingIndex !== -1){   // If the item exists, update its quantity
+    const existingIndex = cart.findIndex(item => item.id === id);
+    if (existingIndex !== -1) {
       const updatedCart = [...cart];
       updatedCart[existingIndex].quantity += quantity;
       setCart(updatedCart);
       localStorage.setItem('cart', JSON.stringify(updatedCart));
-    }else{
+    } else {
       setCart(prevCart => [...prevCart, obj]);
       localStorage.setItem('cart', JSON.stringify([...cart, obj]));
     }
     setCount((prevCount) => prevCount + quantity);
-    setProductTotalInCart((prevTotal) => prevTotal + quantity);
-    
+    setQuantity(1); // Reset quantity input field to 1 after adding to cart
 
-    // console.log("cart element", cart);
     toast.success(` ${quantity} item Added !`, {
       position: "top-center",
       autoClose: 1000,
@@ -56,12 +71,11 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
       progress: undefined,
       theme: "light",
     });
-    
   };
 
   return (
     <div className={styles.mainContainer}>
-        
+
       <div className={styles.container}>
         <div className={styles.productImg}>
           <ReactImageMagnify
@@ -91,7 +105,7 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
             <input
               type="number"
               min="1"
-              max="100"
+              max="1000"
               value={quantity}
               onChange={handleQuantityChange}
             />
@@ -99,7 +113,7 @@ const ProductDetail = ({ cart, setCart, count, setCount }) => {
           </div>
           {cart.length > 0 && <Link to="/cart">View Cart</Link>}
         </div>
-        
+
       </div>
       <div className={styles.description}>
         <h4>Description</h4>

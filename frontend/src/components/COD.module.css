@@ -76,7 +76,14 @@
             text-align: right;
             white-space: nowrap;
           }
-        }}
+        }
+      }
+    .buttons{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
 }
 
 @media(max-width:921px){

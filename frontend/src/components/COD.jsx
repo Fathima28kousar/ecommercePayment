@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,useHistory } from "react-router-dom";
 import axios from "axios";
 import styles from "./COD.module.css";
+import Button from "./home/button/Button";
 
 const COD = ({ setCart }) => {
+  const history = useHistory();
   const location = useLocation();
   // console.log(location.state);
   const [formData, setFormData] = useState(null);
-  const formdata = location.state;
   const {
-    firstName,
-    lastName,
-    emails,
     pincode,
+    city,
     address,
     apartment,
-    phone,
     totalPrice,
     cartItems,
   } = location.state || {};
@@ -28,6 +26,11 @@ const COD = ({ setCart }) => {
     handleSuccess();
     fetchData();
   }, []);
+
+  const onClick = () => {
+    history.push('/');
+    window.scrollTo(0, 0);
+  }
 
   const fetchData = async () => {
     try {
@@ -84,7 +87,7 @@ const COD = ({ setCart }) => {
             <div>
               
               <h4>Address:</h4>
-              <p>{apartment},{address},{pincode}</p>
+              <p>{apartment},{address},{city},{pincode}</p>
               
               <h5>Your Order will be delivered within 2 days</h5>
             </div>
@@ -120,6 +123,9 @@ const COD = ({ setCart }) => {
           ) : (
             <p>Your cart is empty.</p>
           )}
+        </div>
+        <div className={styles.buttons}>
+        <Button text="Back to home" onClick={onClick}/>
         </div>
       </div>
     </div>
