@@ -116,7 +116,6 @@
                   <p>Grand Total:</p>
                   <p>{` $${totalPrice}`}</p>
                 </div>
-                <hr />
               </div>
               <Link
                 to={{

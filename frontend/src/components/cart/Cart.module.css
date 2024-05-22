@@ -96,6 +96,7 @@
                 width: 100%;
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 flex-direction: column;
                 p{
                     font-family: "Open Sans",sans-serif;
@@ -105,9 +106,9 @@
                 .subtotals{
                     width: 100%;
                     display: flex;
-                    justify-content: space-between;
+                    justify-content: center;
+                    align-items: center;
                     gap: 10px;
-
                 }
 
             }
