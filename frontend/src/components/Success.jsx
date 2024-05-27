@@ -34,7 +34,7 @@ const Success = ({setCart}) => {
   const fetchData = async () => {
     try {
         // Fetch data from backend API based on form ID (replace 'formId' with actual ID)
-        const response = await axios.get(`https://organicstoreback.vercel.app/api/`);
+        const response = await axios.get(`https://organicstore-backend-project.vercel.app/api/`);
 
         // Set form data in component state
         setFormData(response.data);
