@@ -60,7 +60,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://organicstores.vercel.app'
+    'https://organicstores-frontend.vercel.app'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = False
