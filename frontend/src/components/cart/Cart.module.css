@@ -104,11 +104,10 @@
                     font-weight: 100;
                 }
                 .subtotals{
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 10px;
+                    width: 100% !important;
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
                 }
 
             }
