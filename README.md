@@ -32,8 +32,8 @@ https://github.com/Fathima28kousar/ecommercePayment/assets/137386986/79fc23b3-bd
 
 
 ## Demo
-[https://organicstore-frontend-project.vercel.app/)](https://organicstore-frontend-project.vercel.app/](https://organicstore-frontend-project.vercel.app/
-)
+https://organicstore-frontend-project.vercel.app/
+
 
 
 ## Features
