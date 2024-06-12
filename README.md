@@ -36,7 +36,7 @@ https://github.com/Fathima28kousar/ecommercePayment/assets/137386986/79fc23b3-bd
 
 
 
-## Features
+## Advantages
 
 - **Health and Sustainability:**  Offers certified organic products and eco-friendly packaging.
 - **User-Friendly Interface:** Features a responsive design and intuitive navigation for a good shopping experience.
