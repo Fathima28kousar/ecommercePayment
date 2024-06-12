@@ -32,7 +32,8 @@ https://github.com/Fathima28kousar/ecommercePayment/assets/137386986/79fc23b3-bd
 
 
 ## Demo
-[https://organicstore-frontend-project.vercel.app/](https://organicstore-frontend-project.vercel.app/)
+
+[![live demo](https://img.shields.io/badge/live_demo-000?style=for-the-badge&logo=ko-fi&logoColor=white)]([https://readme.so/editor](https://organicstore-frontend-project.vercel.app))
 
 
 
